@@ -16,9 +16,12 @@ class CreateAsksTable extends Migration
         Schema::create('asks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ask');
-            $table->integer('categories_id');
-            $table->integer('users_id');
-            $table->integer('answers_id');
+            $table->integer('categories_id')->unsigned();
+            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('users_id')->unsigned();
+            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('answers_id')->unsigned();
+            $table->foreign('answers_id')->references('id')->on('answers')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('status');
             $table->timestamp('date-add');
         });
