@@ -16,12 +16,12 @@ class CreateAsksTable extends Migration
         Schema::create('asks', function (Blueprint $table) {
             $table->increments('id');
             $table->string('ask');
-            $table->integer('categories_id')->unsigned();
-            $table->foreign('categories_id')->references('id')->on('categories')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('users_id')->unsigned();
-            $table->foreign('users_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
-            $table->integer('answers_id')->unsigned();
-            $table->foreign('answers_id')->references('id')->on('answers')->onDelete('cascade')->onUpdate('cascade');
+            $table->integer('category_id')->unsigned();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null')->onUpdate('set null');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('set null');
+            $table->integer('answer_id')->unsigned();
+            $table->foreign('answer_id')->references('id')->on('answers')->onDelete('set null')->onUpdate('set null');
             $table->integer('status');
             $table->timestamp('date-add');
         });
