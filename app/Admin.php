@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Admin extends Model
 {
     protected $fillable = [
-        'name', 'password'
+        'login', 'password'
     ];
 
     public function answers() {

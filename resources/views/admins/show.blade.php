@@ -15,10 +15,11 @@
       <tr>
         <td>{{ $admin->login }}</td>
         <td>{{ $admin->password }}</td>
-        <td><a href="/admins/administrators/update">Change password</a></td>
-        <td><a href="/admins/administrators/delete">Delete</a></td>
+        <td><a href="{{ action ('MainAdminsController@updateForm', ['admin' => $admin -> id]) }}">Change</a></td>
+        <td><a href="{{ action ('MainAdminsController@delete', ['admin' => $admin -> id]) }}">Delete</a></td>
       </tr>
     @endforeach
     </table>
+    <a href="{{ action ('AdminsController@index') }}">Back</a>
 
 @stop

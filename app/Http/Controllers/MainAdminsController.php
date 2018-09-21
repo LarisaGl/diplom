@@ -21,17 +21,26 @@ class MainAdminsController extends Controller
     {
         $admin = new Admin([
           'login' => $request->input('login'),
-          'password' => bcrypt($request->input('password'))
+          'password' => $request->input('password')
         ]);
         $admin->save();
-        return redirect('admins/administrators');
+        return redirect()->action("MainAdminsController@show");
     }
 
-    public function delete() {
-      
+    public function delete(Admin $admin)
+    {
+        $login = $admin->login;
+        $admin -> delete();
+        return redirect()->action("MainAdminsController@show");
     }
 
-    public function update() {
-      
+    public function updateForm(Admin $admin) {
+      return view('admins.updateForm', ['admin' => $admin]);
+    }
+
+    public function update(Request $request) {
+      $admin = Admin::findOrFail($request->id);
+      $admin->fill($request->all())->save();
+      return redirect()->action("MainAdminsController@show");
     }
 }
