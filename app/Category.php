@@ -7,14 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     protected $fillable = [
-        'category'
+        'id', 'category'
     ];
-
-    public function answers() {
-      return $this->hasMany("App/Answer");
-    }
-
-    public function asks() {
-      return $this->hasMany("App/Ask");
-    }
 }

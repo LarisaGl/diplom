@@ -15,11 +15,11 @@ class ModifyAsksTable extends Migration
     {
         Schema::table('asks', function (Blueprint $table) {
             $table->integer('category_id')->unsigned();
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->integer('answer_id')->unsigned();
-            $table->foreign('answer_id')->references('id')->on('answers')->onDelete('set null')->onUpdate('set null');
+            $table->foreign('answer_id')->references('id')->on('answers');
         });
     }
 }

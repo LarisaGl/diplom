@@ -14,7 +14,7 @@ class CreateAsksTable extends Migration
     public function up()
     {
         Schema::create('asks', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->string('ask');
             $table->integer('status');
             $table->timestamp('date-add');
