@@ -1,4 +1,4 @@
-'id', <?php
+<?php
 
 namespace App;
 

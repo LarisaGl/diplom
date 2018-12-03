@@ -24,8 +24,6 @@ Route::get('admins/administrators/{admin}/update', 'MainAdminsController@updateF
 Route::put('admins/administrators/update', 'MainAdminsController@update');
 Route::post('admins/administrators', 'MainAdminsController@store');
 
-Route::get('admins/users', 'UsersAdminsController@show');
-
 Route::get('admins/catogories', 'CategoriesAdminsController@show');
 Route::get('admins/catogories/create', 'CategoriesAdminsController@create');
 Route::get('admins/catogories/{id}/delete', 'CategoriesAdminsController@delete');
@@ -34,3 +32,10 @@ Route::get('admins/catogories/{category}/update', 'CategoriesAdminsController@up
 Route::put('admins/catogories/update', 'CategoriesAdminsController@update');
 
 Route::get('admins/asks', 'AsksAdminsController@show');
+
+Route::get('admins/users', 'UsersAdminsController@show');
+Route::get('admins/users/create', 'UsersAdminsController@create');
+Route::post('admins/users', 'UsersAdminsController@store');
+Route::get('admins/users/{id}/delete', 'UsersAdminsController@delete');
+Route::get('admins/users/{user}/update', 'UsersAdminsController@updateForm');
+Route::put('admins/users/update', 'UsersAdminsController@update');
