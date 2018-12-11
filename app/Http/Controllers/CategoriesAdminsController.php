@@ -17,8 +17,7 @@ class CategoriesAdminsController extends Controller
       return view('admins.categoriesCreate');
     }
 
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
         $category = new Category([
           'category' => $request->input('category')
         ]);
@@ -26,8 +25,7 @@ class CategoriesAdminsController extends Controller
         return redirect()->action("CategoriesAdminsController@show");
     }
 
-    public function delete($id)
-    {
+    public function delete($id) {
         $category = Category::findOrFail($id);
         $category->delete();
         return redirect()->action("CategoriesAdminsController@show");

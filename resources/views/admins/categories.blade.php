@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <h1>Category</h1>
+  <h1>Categories</h1>
 
   <a href="/admins/catogories/create">Create new</a>
 

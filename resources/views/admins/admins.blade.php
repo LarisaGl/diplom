@@ -15,8 +15,8 @@
       <tr>
         <td>{{ $admin->login }}</td>
         <td>{{ $admin->password }}</td>
-        <td><a href="{{ action ('MainAdminsController@updateForm', ['admin' => $admin -> id]) }}">Change</a></td>
-        <td><a href="{{ action ('MainAdminsController@delete', ['admin' => $admin -> id]) }}">Delete</a></td>
+        <td><a href="{{ action ('AdminsController@updateForm', ['admin' => $admin -> id]) }}">Change</a></td>
+        <td><a href="{{ action ('AdminsController@delete', ['admin' => $admin -> id]) }}">Delete</a></td>
       </tr>
     @endforeach
     </table>

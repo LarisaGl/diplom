@@ -17,7 +17,7 @@ class CreateAsksTable extends Migration
             $table->increments('id')->unsigned();
             $table->string('ask');
             $table->integer('status');
-            $table->timestamp('date-add');
+            $table->timestamps();
         });
     }
 

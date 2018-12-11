@@ -8,5 +8,6 @@
   <a href="/admins/users">Users</a>
   <a href="/admins/catogories">Catogories</a>
   <a href="/admins/asks">Asks</a>
+  <a href="/admins/answers">Answers</a>
 
 @stop

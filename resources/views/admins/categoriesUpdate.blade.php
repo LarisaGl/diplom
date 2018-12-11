@@ -8,7 +8,7 @@
       {{ csrf_field() }}
       {{ method_field('PUT') }}
       <input type="hidden" name="id" value="{{ $category->id }}">
-      <label>Enter new category</label><input type="text" name="category">
+      <label>Enter new category</label><input type="text" name="category" value="{{ $category->category }}">
       <input type="submit" value="Update">
   </form>
   <a href="{{ action ('CategoriesAdminsController@show') }}">Back</a>

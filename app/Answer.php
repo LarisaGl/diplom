@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Answer extends Model
 {
     protected $fillable = [
-        'id', 'answer', 'ask_id', 'category_id', 'admin_id', 'date-answer'
+        'id', 'answer', 'ask_id', 'category_id', 'admin_id'
     ];
 
     public function category() {
@@ -21,4 +21,6 @@ class Answer extends Model
     public function admin() {
       return $this->belongsTo("App/Admin");
     }
+
+    public $timestamps = true;
 }

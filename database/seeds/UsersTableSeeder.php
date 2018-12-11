@@ -33,5 +33,10 @@ class UsersTableSeeder extends Seeder
         DB::table('categories')->insert([
           'category' => 'Delivery',
         ]);
+        DB::table('users')->insert([
+          'name' => 'Larisa',
+          'email' => '89888985265@mail.ru',
+          'password' => 'qwerty',
+        ]);
     }
 }
